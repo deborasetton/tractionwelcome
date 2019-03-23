@@ -1,69 +1,55 @@
-
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">EVENT_NAME</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link">Welcome GUEST_NAME
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Page Content -->
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
   <div class="container">
-    <div class="horizontal_center_img">
-        <img src="https://i.imgur.com/ktlUkEg.jpg" alt="Map">
-    </div>
-    <div class="horizontal_center">
-        <div class="center_header">
-            <h4>SCHEDULE</h4>
-        </div>
-        <div class="task">
-            <h5>SCHEDULE_DESCRIPTION</h5>
-            <ul>
-                <li>START_AT</li>
-                <li>END_AT</li>
-                <li>LOCATION</li>
-            </ul>
-        </div>
-        <div class="task">
-            <h5>TASK_DESCRIPTION</h5>
-            <ul>
-                <li>START_AT</li>
-                <li>END_AT</li>
-                <li>LOCATION</li>
-            </ul>
-        </div>
-    </div>
-    <div class="horizontal_center">
-        <div class="center_header">
-            <h4>TASKS</h4>
-        </div>
-        <div class="task">
-            <h5>TASK_DESCRIPTION</h5>
-            <ul>
-                <li>START_AT</li>
-                <li>END_AT</li>
-                <li>LOCATION</li>
-            </ul>
-        </div>
-        <div class="task">
-            <h5>TASK_DESCRIPTION</h5>
-            <ul>
-                <li>START_AT</li>
-                <li>END_AT</li>
-                <li>LOCATION</li>
-            </ul>
-        </div>
+    <a class="navbar-brand" href="#"><%= @event.name %></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link">Welcome, <%= @guest.name %>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div class="horizontal_center_img">
+      <img src="<%= @event.image_url %>" alt="Map">
+  </div>
+  <div class="horizontal_center">
+      <div class="center_header">
+          <h4>SCHEDULE</h4>
+      </div>
+      <div class="task">
+        <% @scheduled_tasks.each do |task| %>
+          <h5><%= task.description %></h5>
+          <ul>
+              <li>Start: <%= I18n.l task.start_at %></li>
+              <li>End: <%= I18n.l task.end_at %></li>
+              <li>Location: <%= task.location %></li>
+          </ul>
+        <% end %>
+      </div>
+  </div>
+  <div class="horizontal_center">
+      <div class="center_header">
+          <h4>TASKS</h4>
+      </div>
+      <div class="task">
+
+        <% @free_tasks.each do |task| %>
+          <h5><%= task.description %></h5>
+          <ul>
+              <li>Start: <%= I18n.l task.start_at %></li>
+              <li>End: <%= I18n.l task.end_at %></li>
+              <li>Location: <%= task.location %></li>
+          </ul>
+        <% end %>
+      </div>
+  </div>
+</div>

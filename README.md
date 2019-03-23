@@ -33,3 +33,12 @@ The Proof of Concept for this feature was built as a Ruby on Rails application. 
 2. Copy `.env.sample` file to `.env`
 3. In the root directoy, run `docker-compose build`
 3. In the root directoy, run `docker-compose up`
+4. In the root directory run `docker-compose run --rm traction-welcome-api /bin/bash` and then:
+    - `bundle install`
+    - `bundle exec rake db:create db:migrate db:seed`
+
+5. In your broswer, visit `http://localhost:3000/qr_codes/new`
+6. Use any of these URLs to test:
+  - https://i.imgur.com/1pViXeB.png
+  - https://i.imgur.com/u0oOQjY.png
+  - https://i.imgur.com/ZquOIZG.png

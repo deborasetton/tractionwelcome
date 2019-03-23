@@ -5,7 +5,6 @@ class QrCodesController < ApplicationController
   def new
   end
   def decode
-    debugger
     qr_code_url = params[:qr_code_url]
 
     file_contents = open(qr_code_url).read

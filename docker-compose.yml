@@ -12,9 +12,9 @@ services:
       - ./volumes/postgres:/var/lib/postgresql/data
 
   traction-welcome-api:
-    build: ./traction_welcome_api
+    build: ./
     volumes:
-      - ./traction_welcome_api:/traction_welcome_api
+      - ./:/traction_welcome_api
       - ./volumes/gems:/bundle
     tty: true
     stdin_open: true
