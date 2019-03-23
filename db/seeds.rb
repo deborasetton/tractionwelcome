@@ -77,6 +77,16 @@ task_interview_joanne1 = Task.create!(
   task_type: :scheduled
 )
 
+task_hackathon = Task.create!(
+  event: event_sp_mission,
+  guest: guest_joanne,
+  description: 'Hackathon',
+  start_at: Time.parse('2019-03-23T12:00:00.000Z'),
+  end_at: Time.parse('2019-03-23T22:00:00.000Z'),
+  location: 'Any of the 1st floor rooms',
+  task_type: :free
+)
+
 ####################################################################
 
 company_hbo = Company.create!(name: 'HBO')
