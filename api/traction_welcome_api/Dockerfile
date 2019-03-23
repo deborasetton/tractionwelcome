@@ -19,6 +19,13 @@ RUN apt-get install -y nodejs
 # Instala o client do Postgres
 RUN apt-get install -y postgresql-client-9.6
 
+# Install Python.
+RUN \
+  apt-get update && \
+  apt-get install -y python python-dev python-pip python-virtualenv libzbar-dev && \
+  pip install Pillow zbar pyzbar qrcode && \
+  rm -rf /var/lib/apt/lists/*
+
 # Configura o diretório da aplicação no container
 ENV APP_HOME /traction_welcome_api
 RUN mkdir $APP_HOME
