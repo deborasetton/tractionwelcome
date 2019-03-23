@@ -31,10 +31,10 @@ The Proof of Concept for this feature was built as a Ruby on Rails application. 
 
 ### Steps
 1. Clone the repository
-2. Copy `.env.sample` file to `.env`
+2. Copy the file `.env.sample` file to `.env`
 3. In the root directoy, run `docker-compose build`
 3. In the root directoy, run `docker-compose up`
-4. In the root directory run `docker-compose run --rm traction-welcome-api /bin/bash` and then:
+4. In another terminal windown, run `docker-compose run --rm traction-welcome-api /bin/bash` and then:
     - `bundle install`
     - `bundle exec rake db:create db:migrate db:seed`
 
