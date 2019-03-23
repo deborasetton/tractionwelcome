@@ -1,0 +1,22 @@
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+      <div class="mx-auto text-center" style="margin-top: 550px;">
+        <!--<h1 class="mx-auto my-0 text-uppercase">Login</h1>-->
+
+
+        <%= form_tag('/qr_codes/decode', method: :post) do %>
+           <div class="form-group">
+            <input type="text" class="form-control form-control-lg"  size="50" id="qr_code_url" aria-describedby="emailHelp" placeholder="Enter QR Code URL" name="qr_code_url" value="https://i.imgur.com/1pViXeB.png">
+            </div>
+        <button type="submit"  id="scanqrcode" href="#" class="btn btn-primary js-scroll-trigger">Go to event!</button>
+        <% end %>
+
+      </div>
+    </div>
+  </header>
+
+<% content_for :page_script do %>
+  <script type="text/javascript">
+  </script>
+<% end %>
