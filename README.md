@@ -29,6 +29,7 @@ The Proof of Concept for this feature was built as a Ruby on Rails application. 
 - Docker
 - Docker compose
 
+### Steps
 1. Clone the repository
 2. Copy `.env.sample` file to `.env`
 3. In the root directoy, run `docker-compose build`
