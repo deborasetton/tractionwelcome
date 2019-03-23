@@ -42,6 +42,19 @@
     padding-right: 10px;
 }
 
+.task:nth-child(odd){
+  background-color: rgba(0,0,0,.05);
+}
+
+.task h5{
+  font-size: 1.2em;
+  margin-bottom:0;
+}
+
+.task li, .task ul{
+  padding-left: 0.5em;
+}
+
 .task:hover{
     background: #bbbbff33;
 }

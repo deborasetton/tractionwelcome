@@ -25,16 +25,17 @@
       <div class="center_header">
           <h4>SCHEDULE</h4>
       </div>
-      <div class="task">
         <% @scheduled_tasks.each do |task| %>
-          <h5><%= task.description %></h5>
-          <ul>
-              <li>Start: <%= I18n.l task.start_at %></li>
-              <li>End: <%= I18n.l task.end_at %></li>
-              <li>Location: <%= task.location %></li>
-          </ul>
-        <% end %>
-      </div>
+          <div class="task">
+            <h5><%= task.description %></h5>
+            <ul>
+                <li>Start: <%= I18n.l task.start_at %></li>
+                <li>End: <%= I18n.l task.end_at %></li>
+                <li>Location: <%= task.location %></li>
+            </ul>
+          </div>
+        </div>
+      <% end %>
   </div>
   <div class="horizontal_center">
       <div class="center_header">
