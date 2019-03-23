@@ -1,0 +1,24 @@
+version: "3.3"
+
+services:
+  postgres:
+    image: postgres:9.6-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: traction_welcome_usr
+      POSTGRES_PASSWORD: traction_welcome_pwd
+    volumes:
+      - ./volumes/postgres:/var/lib/postgresql/data
+
+  traction-welcome-api:
+    build: ./traction_welcome_api
+    volumes:
+      - ./traction_welcome_api:/traction_welcome_api
+      - ./volumes/gems:/bundle
+    tty: true
+    stdin_open: true
+    privileged: true
+    command: bash -c "echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p && rm -f tmp/pids/server.pid && (bundle check || bundle install) && bundle exec rails s -b 0.0.0.0"
+    ports:
+      - 3000:3000
