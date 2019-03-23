@@ -23,7 +23,7 @@ Provide the guest with a map of the event location and important landmark highli
 #### What it *DOESN'T*
 * Generate the QR Codes
 * Scan the QR Code using a cellphone camera
-* Access a database with the stored data of the guests and events
+* DAO and database functionalities (aside from find)
 * Insert, update and delete informations
 ##### Why not?
 Given the time frame, the team decided to focus on a deliverable showcase
